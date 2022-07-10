@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../connect.php';
+
 if($_POST)
 {
     $error = [];
@@ -32,14 +32,14 @@ if($_POST)
         header(('location: /admin/signup.php'));
         exit();
     }
-    $fullName = $_POST['fullName'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $birthday = $_POST['birthday'];
-    $address = $_POST['address'];
-    $sql = "insert into users (fullName, email, password, birthday, address)
-    values('$fullName','$email','$password','$birthday','$address')"; 
-    $conn->exec($sql);
+    // $fullName = $_POST['fullName'];
+    // $email = $_POST['email'];
+    // $password = $_POST['password'];
+    // $birthday = $_POST['birthday'];
+    // $address = $_POST['address'];
+    // $sql = "insert into users (fullName, email, password, birthday, address)
+    // values('$fullName','$email','$password','$birthday','$address')"; 
+    // $conn->exec($sql);
 }
 else {
     header('location: /admin/signup.php');

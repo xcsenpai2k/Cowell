@@ -1,6 +1,5 @@
 <?php 
     session_start();
-    // require '../../DB/config.php';
 ?>
 <!doctype html>
 <html lang="en">
