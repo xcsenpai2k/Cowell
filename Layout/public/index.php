@@ -1,11 +1,10 @@
 <?php
-require_once 'C:\laragon\www\Cowell\vendor\autoload.php';
+require '..\vendor\autoload.php';
 //require '../App/Models/Order.php';
 //require '../App/Models/ShippingOrder.php';
 use App\Models\Order;
 use App\Models\ShippingOrder;
 use App\Controllers\IndexController;
-
 
 $index = new IndexController();
 $params = $index->show();
@@ -26,26 +25,3 @@ $params = $index->show();
 //    $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . 	'.php';
 //    require '../' . $fileName;
 //});
-
-//$orders = new Order();
-//$orders = new ShippingOrder();
-//$orders->add([
-//    'id'=>1,
-//    'name'=>'giay nam',
-//    'price'=>'100',
-//    'quantity'=>2
-//]);
-//$orders->add([
-//    'id'=>2,
-//    'name'=>'giay nu',
-//    'price'=>'200',
-//    'quantity'=>2
-//]);
-//$orders->setTax(0.08);
-//$orders->setDiscount(0.3);
-//$orders->setFeeShip(30);
-//
-//var_dump($orders->getTotal());
-//var_dump($orders->getTax());
-//var_dump($orders->getDiscount());
-
