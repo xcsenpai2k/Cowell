@@ -1,14 +1,22 @@
 <?php
 require '..\vendor\autoload.php';
-//require '../App/Models/Order.php';
-//require '../App/Models/ShippingOrder.php';
+// require '../App/Models/Order.php';
+// require '../App/Models/ShippingOrder.php';
 use App\Models\Order;
 use App\Models\ShippingOrder;
 use App\Controllers\IndexController;
 
-$index = new IndexController();
-$params = $index->show();
+// $index = new IndexController();
+// $params = $index->show();
 
+$order = new Order();
+$order->add([
+    'id' => 1,
+    'name' => 'giay',
+    'price' => '1000',
+    'quantity' => 5
+]);
+var_dump($order->getTotal());
 // Transforms MyNamespace_MySubNamespace_MyClassName
 // or \MyNamespace\MySubNamespace\MyClassName
 // to MyNamespace/MySubNamespace/MyClassName.php

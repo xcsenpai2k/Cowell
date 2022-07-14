@@ -1,15 +1,23 @@
 <?php
 namespace App\Models;
-class Order{
-    private $items=[];
-    private $tax=0;
-    private $discount=0;
+
+class Order
+{
+
+    private $items = [];
+
+    private $tax = 0;
+
+    private $discount = 0;
 
     /**
-     * @param array $item //id,name,price,quantity
+     *
+     * @param array $item
+     *            //id,name,price,quantity
      */
-    public function add($item){
-        $this->items[]=$item;
+    public function add($item)
+    {
+        $this->items[] = $item;
     }
 
     public function setTax($tax)
@@ -32,17 +40,22 @@ class Order{
         return $this->discount * $this->total();
     }
 
-    public function getTotal(){
+    /**
+     * Return order total
+     *
+     * @return number
+     */
+    public function getTotal()
+    {
         return $this->total() + $this->getTax() - $this->getDiscount();
     }
 
-
-    private function total(){
+    private function total()
+    {
         $total = 0;
-        foreach($this->items as $item){
+        foreach ($this->items as $item) {
             $total += $item['price'] * $item['quantity'];
         }
         return $total;
     }
-
 }
